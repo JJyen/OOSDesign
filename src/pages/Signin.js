@@ -15,7 +15,7 @@ class Signin extends React.Component{
                 <input type="password"  id="current-password" name="pw" autoComplete="pw" placeholder="영문, 숫자, 8글자 이상"/>
                 <input className="submit-btn" type="submit" value={"로그인"}/>
             </form>
-            <SignupLink to={"/signin"}>회원가입</SignupLink>
+            <SignupLink to={"/signup"}>회원가입</SignupLink>
             </SigninContainer>
         )
     }
