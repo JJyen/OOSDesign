@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import TapBar from "../components/TapBar";
 
 class Layout extends React.Component{
     render(){
@@ -9,7 +10,7 @@ class Layout extends React.Component{
                 <Outlet/>
             </main>
             <nav>
-                tab bar
+                <TapBar/>
             </nav>
             </>
         )
