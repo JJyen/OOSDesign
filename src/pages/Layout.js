@@ -7,6 +7,7 @@ class Layout extends React.Component{
     render(){
         return(
             <LayoutContainer >
+                <h2>로고</h2>
                 <main>
                     <Outlet/>
                 </main>
@@ -23,4 +24,9 @@ export default Layout;
 const LayoutContainer = styled.div`
     background-color: white;
     height: 100vh;
+
+    h2{
+        text-align: center;
+        padding-top: 5px;
+    }
 `;
