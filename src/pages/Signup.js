@@ -8,7 +8,7 @@ class Signup extends React.Component{
     render(){
         return(
             <SigninContainer>
-            <Link to={"/"}><h1>로고</h1></Link>
+            <Link to={"/"}><h1>트리뷰</h1></Link>
             <form>
                 <label htmlFor="id">아이디</label>
                 <input type="text" id="id" name="id" autoComplete="id" placeholder="gildong"/>
@@ -32,6 +32,7 @@ const SigninContainer = styled.div`
 
     label{
         margin-top: 10px;
+        margin-bottom: 5px;
     }
     
     h1{

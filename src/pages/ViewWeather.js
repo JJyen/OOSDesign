@@ -232,6 +232,7 @@ const MyLocation = styled.div`
             font-size: 15px;
             font-weight: 500;
             margin-left: 15px;
+            margin-bottom: 15px;
         }
 
         .temp{

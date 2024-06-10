@@ -1,9 +1,17 @@
+@font-face {
+  font-family: 'NPSfontBold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
     padding: 0px;
     margin: auto;
     max-width: 600px;
     height: 100vh;
     background-color:  #f8faff;
+    font-family: 'NPSfontBold';
 
 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -20,6 +28,7 @@ body {
 
   *{
       box-sizing: border-box;
+      font-family: 'NPSfontBold';
   }
 
   h1, h2, h3, h4, h5, h6{

@@ -38,7 +38,7 @@ class WeatherBox extends React.Component {
     const { d1, d2, d3, location } = this.props;
 
     if (this.state.loading) {
-      return <div>Loading...</div>;
+      return <LoadingBox>Loading...</LoadingBox>;
     }
 
     return (
@@ -76,6 +76,10 @@ class WeatherBox extends React.Component {
 }
 
 export default WeatherBox;
+
+const LoadingBox = styled.div`
+  margin-top: 20px;
+` 
 
 const WeatherBoxContainer = styled.div`
     width: 450px;

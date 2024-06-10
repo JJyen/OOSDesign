@@ -7,7 +7,7 @@ class Signin extends React.Component{
     render(){
         return(
             <SigninContainer>
-            <h1>로고</h1>
+            <Link to={"/"}><h1>트리뷰</h1></Link>
             <form>
                 <label htmlFor="id">아이디</label>
                 <input type="text" id="id" name="id" autoComplete="id" placeholder="gildong@gmail.com"/>
@@ -26,6 +26,10 @@ export default Signin;
 const SigninContainer = styled.div`
     background-color: white;
     height: 100vh;
+
+    label{
+        margin-bottom: 5px;
+    }
     
     h1{
         text-align: center;
