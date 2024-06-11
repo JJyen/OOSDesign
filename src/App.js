@@ -16,14 +16,14 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout/>}>
-          <Route Home path="/" element={<Home/>}/>
-          <Route FinalPlanList path="/finalplanlist" element={<FinalPlanList/>}/>
-          <Route ViewFinalPlan path="/viewfinalplan" element={<ViewFinalPlan/>}/>
-          <Route MakePlan path="/makeplan" element={<MakePlan/>}/>
-          <Route MakePlan path="/account" element={<Account/>}/>
-          <Route MakePlan path="/viewweather" element={<ViewWeather/>}/>
-          <Route MakePlan path="/viewexchagerate" element={<ViewExchageRate/>}/>
-          <Route MakePlan path="/viewmap" element={<ViewMap/>}/>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/finalplanlist" element={<FinalPlanList/>}/>
+          <Route path="/viewfinalplan" element={<ViewFinalPlan/>}/>
+          <Route path="/makeplan" element={<MakePlan/>}/>
+          <Route path="/account" element={<Account/>}/>
+          <Route path="/viewweather" element={<ViewWeather/>}/>
+          <Route path="/viewexchagerate" element={<ViewExchageRate/>}/>
+          <Route path="/viewmap" element={<ViewMap/>}/>
         </Route>
         <Route path="/signin" element={<Signin/>}/>
         <Route path="/signup" element={<Signup/>}/>

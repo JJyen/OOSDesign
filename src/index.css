@@ -34,6 +34,12 @@ body {
   h1, h2, h3, h4, h5, h6{
       margin: 0;
   }
+  
+  select{
+    &:hover{
+      cursor: pointer;
+    }
+  }
 
   html, div, span, p, 
   a, dl, dt, dd, ol, ul, li, form, label, table{
