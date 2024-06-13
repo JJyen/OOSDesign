@@ -1,19 +1,63 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 import { GRAY20,GRAY30, MAIN } from "../styles/Colors";
 
+function withNavigation(Component) {
+    return props => <Component {...props} navigate={useNavigate()} />;
+}
+
 class Signin extends React.Component{
+    constructor(props) {
+        super(props);
+        const users = JSON.parse(localStorage.getItem("user"));
+
+        this.state = {
+            users: users,
+            inputId: '',
+            inputPW: '',
+        };
+    }
+
+    onSubmit = (e,id, pw) => {
+        const {users} = this.state;
+        const user = users.find(u => u.id === id && u.pw === pw);
+        if(user){
+            user.login = true;
+            localStorage.setItem('user', JSON.stringify(users));
+            alert(`${user.id}님 환영합니다.`);
+            this.props.navigate('/')
+        }else{
+            alert(`회원정보를 찾을 수 없습니다.`);
+            e.preventDefault();
+        }
+    }
+        
     render(){
+        const {inputId, inputPW} = this.state;
         return(
             <SigninContainer>
             <Link to={"/"}><h1>트리뷰</h1></Link>
             <form>
                 <label htmlFor="id">아이디</label>
-                <input type="text" id="id" name="id" autoComplete="id" placeholder="gildong@gmail.com"/>
+                <input 
+                    type="text" 
+                    id="id" 
+                    autoComplete="id" 
+                    placeholder="아이디를 입력해주세요." 
+                    value={inputId}
+                    onChange={(e)=> this.setState({inputId: e.target.value })} 
+                />
                 <label htmlFor="current-password">비밀번호</label>
-                <input type="password"  id="current-password" name="pw" autoComplete="pw" placeholder="영문, 숫자, 8글자 이상"/>
-                <input className="submit-btn" type="submit" value={"로그인"}/>
+                <input 
+                    type="password"  
+                    id="current-password" 
+                    autoComplete="pw" 
+                    placeholder="비밀번호를 입력해주세요."
+                    value={inputPW}
+                    onChange={(e)=> this.setState({inputPW: e.target.value })} 
+                />
+                <input className="submit-btn" type="submit" value={"로그인"} onClick={(e)=>this.onSubmit(e,inputId, inputPW)}/>
             </form>
             <SignupLink to={"/signup"}>회원가입</SignupLink>
             </SigninContainer>
@@ -21,7 +65,7 @@ class Signin extends React.Component{
     }
 }
 
-export default Signin;
+export default withNavigation(Signin);
 
 const SigninContainer = styled.div`
     background-color: white;

@@ -2,13 +2,21 @@ import React from "react";
 import { MdDeleteOutline } from "react-icons/md";
 import styled from "styled-components";
 import { MAIN } from "../styles/Colors";
+import { Link } from "react-router-dom";
 
 class PlanListItem extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {}
+    }
+
     render(){
+        const {title, onDelete} = this.props;
+        
         return(
             <PlanListItemContainer >
-                <p className="plan-title">20240721 일본여행🌠</p>
-                <p className="plan-delete"><MdDeleteOutline /></p>
+                <Link to={{ pathname: `makeplan/${title}`}}><p className="plan-title">{title}</p></Link>
+                <p className="plan-delete" onClick={() => onDelete(title)}><MdDeleteOutline /></p>
             </PlanListItemContainer>
         )
     }
@@ -27,7 +35,7 @@ const PlanListItemContainer = styled.div`
     margin-bottom: 15px;
 
     .plan-title{
-        flex: 1;
+        width: 450px;
     }
 
     .plan-delete{

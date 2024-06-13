@@ -1,15 +1,20 @@
 import React from "react";
-import PlanListItem from "../components/PlanListItem";
+import FinalPlanListItem from "../components/FinalPlanListItem";
 import styled from "styled-components";
 
 class FinalPlanList extends React.Component{
+    state = {
+        plans: JSON.parse(localStorage.getItem("plans")) || []
+      };
+
     render(){
+        const {plans} = this.state;
+
         return(
             <FinalPlanListContainer>
-                <PlanListItem/>
-                <PlanListItem/>
-                <PlanListItem/>
-                <PlanListItem/>
+                {plans.map((plan, index) => (
+                    <FinalPlanListItem title={plan.title} key={index} />
+                ))}
             </FinalPlanListContainer>
         )
     }
