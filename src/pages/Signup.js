@@ -1,8 +1,11 @@
 import React from "react";
-//import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { GRAY30, GRAY20, MAIN } from "../styles/Colors";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+function withNavigation(Component) {
+    return props => <Component {...props} navigate={useNavigate()} />;
+}
 
 class Signup extends React.Component{
     render(){
@@ -17,14 +20,18 @@ class Signup extends React.Component{
                 <input type="password"   name="pw"  placeholder="비밀번호를 다시 입력해주세요."/>
                 <label htmlFor="email">이메일</label>
                 <input type="email" id="email" name="email" autoComplete="email" placeholder="gildong@gmail.com"/>
-                <input className="submit-btn" type="submit" value={"회원가입"}/>
+                <input 
+                    className="submit-btn" 
+                    type="submit" value={"회원가입"} 
+                    onClick={()=>{alert("현재 지원하지 않는 기능입니다."); this.props.navigate('/signin')}}
+                />
             </form>
             </SigninContainer>
         )
     }
 }
 
-export default Signup;
+export default withNavigation(Signup);
 
 const SigninContainer = styled.div`
     background-color: white;
