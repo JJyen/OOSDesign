@@ -65,7 +65,6 @@ class ViewExchageRate extends React.Component{
         try{
             const res = await axios.get('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/krw.min.json');
             this.setState({exchangeRate: res.data.krw});
-            //console.log(this.state);
         }catch(error){
             console.log("에러", error);
         }
@@ -90,7 +89,6 @@ class ViewExchageRate extends React.Component{
       };
 
     render(){
-        console.log(this.state);
         return(
             <ExchangeRateContainer>
                 <h4>환율 계산</h4><hr/>

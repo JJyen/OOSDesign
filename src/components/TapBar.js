@@ -24,7 +24,7 @@ class TapBar extends React.Component{
                 </Link>
                 <Link to={"/finalplanlist"} className="menu-box final-view">
                     <MdChromeReaderMode/>
-                    <TapBarMenu>최종 목록</TapBarMenu>
+                    <TapBarMenu>최종본 목록</TapBarMenu>
                 </Link>
                 <Link to={"/"} className="menu-box home">
                     <IoMdHome/>

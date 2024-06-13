@@ -66,7 +66,7 @@ class ViewWeather extends React.Component {
             })
             .catch((error) => console.log(error));
     }
-///////////////////////////////////////////////////////////////////////////////////////////////
+
     searchWeather = (city) => {
         const cityName = city;
         const apiKey = process.env.REACT_APP_WEATHER_KEY;
@@ -82,7 +82,7 @@ class ViewWeather extends React.Component {
                       lon: data.lon,
                       city: data.local_names.ko
                     },
-                  }, this.getSearchWeather); // 위치 정보를 설정한 후 날씨 정보를 가져옴
+                  }, this.getSearchWeather);
             })
             .catch((error) => console.log(error));
     }

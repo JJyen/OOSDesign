@@ -14,17 +14,6 @@ class ViewMap extends React.Component {
         inputDestination: '',
     }
 
-    /*componentDidMount(){
-        navigator.geolocation.getCurrentPosition((position) => {
-            let lat = position.coords.latitude;
-            let lon = position.coords.longitude;
-            this.setState({
-                myLat: lat,
-                myLon: lon
-            });
-        });
-    }*/
-
     onClickBtn = () => {
         this.setState({origin: this.state.inputOrigin, destination: this.state.inputDestination});
     }
@@ -32,7 +21,6 @@ class ViewMap extends React.Component {
     render(){
         const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
         const {mode, inputOrigin, inputDestination, origin, destination} = this.state;
-        console.log(this.state);
 
         return(
             <>
@@ -43,8 +31,16 @@ class ViewMap extends React.Component {
                         <option value="bicycling">자전거</option>
                         <option value="driving">차</option>
                 </select>
-                <input placeholder="출발지를 입력하세요." type="text" value={inputOrigin} onChange={(e)=>this.setState({ inputOrigin: e.target.value })}/>
-                <input placeholder="도착지를 입력하세요." type="text" value={inputDestination} onChange={(e) => this.setState({ inputDestination: e.target.value })}/>
+                <input 
+                    placeholder="출발지를 입력하세요." 
+                    type="text" value={inputOrigin}
+                     onChange={(e)=>this.setState({ inputOrigin: e.target.value })}
+                />
+                <input 
+                    placeholder="도착지를 입력하세요." 
+                    type="text" value={inputDestination}
+                    onChange={(e) => this.setState({ inputDestination: e.target.value })}
+                />
                 <button onClick={this.onClickBtn}>길찾기</button>
             </InputLocationBox>
             {this.state.origin && this.state.destination ? 
