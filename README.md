@@ -5,7 +5,7 @@
 - 런타임 환경: Node.js (설치 필요)
 
 ## 실행방법
-1. Visual Studio Code에서 프로젝트 파일을 열어주세요.
+1. Visual Studio Code에서 프로젝트 폴더를 열어주세요.
 2. 터미널에서 다음 명령어를 입력해 주세요.
    ```bash
    cd oss-design
@@ -14,6 +14,11 @@
    ```bash
    npm start
    ```
+   - 입력 시 만약 ['react-scripts'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.] 문구가 뜨면 다음과 같이 입력해주세요.
+   ```bash
+   npm update
+   npm start
+   ```  
 
 ## 주의사항
 1. open api 개인 키가 입력된 .env 파일이 깃허브에는 업로드되어있지 않습니다. **LMS 과제란에 제출된 프로젝트 파일**을 사용해 주세요.
